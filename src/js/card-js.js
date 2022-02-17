@@ -1303,7 +1303,7 @@ CardJs.prototype.updateHiddenExpiryFields = function () {
   var vals = this.expiryMonthYearInput.val().match(/^\s*(\d+)\s*\/\s*(\d+)\s*$/);
   if (vals != null) {
     var month = vals[1];
-    var year = vals[2];
+    var year = vals[2].length == 4 ? vals[2].substr(2, 2) : vals[2];
     this.expiryMonthInput.val(month);
     this.expiryYearInput.val(year);
     this.expiryMonthYearInput.val(month + " / " + year);
